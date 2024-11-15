@@ -1,124 +1,138 @@
-# StoryCrafters: Taiko Multiverse Adventure
+# AetherVault
 
-# Table of Contents
-1. Project Overview
-2. Features
-3. Integration of Taiko OG NFT Collections
-4. Smart Contracts
-5. Architecture
-6. Getting Started
-7. Deployment
-8. Testing
-9. Usage
-10. Contributing
-11. License
+# Overview
+AetherVault is an AI-powered DeFi asset management platform designed to revolutionize how users manage their digital assets. By leveraging cutting-edge artificial intelligence and blockchain technology, AetherVault provides users with:
 
-# 1. Project Overview
-StoryCrafters: Taiko Multiverse Adventure is an interactive, blockchain-based role-playing game (RPG) that merges NFT-based storytelling with community-driven gameplay. Players make choices that shape the story and unlock new paths in an evolving narrative. The project leverages the Taiko blockchain for community-driven decision-making, NFT-based character/item management, and decentralized guild-based gameplay.
+- Optimal Asset Allocations: AI-driven recommendations tailored to user-defined risk tolerance.
+- Portfolio Automation: Automated portfolio rebalancing to maintain optimal allocations.
+- Real-Time Insights: Economic dashboards with live indicators, such as interest rates and inflation.
+- Staking and Rewards: Opportunities for users to earn rewards by participating in staking pools.
 
-**Track:** Play Hard
-**Objective:** Engage players in a community-driven, decentralized storytelling RPG built on Taiko.
-**Goal:** Combine blockchain mechanics with RPG gameplay, allowing players to participate actively in shaping the story through NFT ownership, guild challenges, and a dynamic voting system.
+# Features
+1. Portfolio Management
+Users can create portfolios, allocate assets, and manage investments seamlessly.
 
-# 2. Features
-- Community-Driven Story Choices: Players influence the storyline by voting on key decisions, recorded immutably on the Taiko blockchain.
-- NFT-Based Characters and Items: Players collect unique NFTs representing characters, items, and artifacts that affect story progression and gameplay.
-- Guild System with Competitions and Collaborations: Players can join guilds and participate in guild challenges, fostering teamwork or rivalry.
-- Dynamic Leaderboards and Achievements: Track individual and guild accomplishments, with rewards and badges for performance and participation.
-- On-Chain Minigames: Complete in-game quests, puzzles, and battles with outcomes recorded on-chain.
-- In-Game NFT Marketplace: A decentralized marketplace for trading NFTs representing in-game assets, enhancing engagement and item rarity.
+AI integration ensures that asset allocation aligns with market trends and user preferences.
+2. Economic Dashboard
+Provides real-time updates on economic indicators, including interest rates and inflation, sourced from reliable oracles.
+3. Staking & Rewards
+Allows users to stake tokens and earn rewards based on participation.
+Transparent and decentralized reward distribution mechanism.
+4. Token Standard Integration
+Supports ERC-20 for fungible assets and ERC-721 for non-fungible tokens (NFTs).
+5. AI-Driven Rebalancing
+Automated portfolio rebalancing based on AI signals, ensuring optimal performance.
 
-# 3. Integration of Taiko OG NFT Collections
-This project integrates Taiko’s official NFT collections—Taikoons, Taikonauts, and Trailblazers Badges—to foster greater engagement and enhance the gameplay experience. Players can use these exclusive NFTs within the game to:
+# Core Contracts
+1. PortfolioManager.sol
+- Handles portfolio creation, management, and AI-driven rebalancing.
+- Allows users to create, update, and manage their portfolios.
+- Integrates with AI systems to trigger rebalancing actions.
 
-- Unlock Special Abilities or Roles: Each NFT type offers unique in-game advantages, enhancing the strategic and storytelling aspects.
-- Gain Guild Recognition: Members holding these OG NFTs receive exclusive guild benefits, such as early access to missions, enhanced voting power, or rewards in community challenges.
-- Boost Marketplace Visibility: Players holding Taiko OG NFTs are featured in the marketplace, making their assets more visible and fostering an interactive community economy.
+2. StakingRewards.sol
+- Manages staking pools and distributes rewards to participants.
+- Enables users to stake tokens securely.
+- Calculates and distributes rewards proportionally.
 
-# 4. Smart Contracts
+3. EconomicDataOracle.sol
+Fetches real-time economic data from external oracles.
 
-The project includes four key smart contracts, each supporting a specific part of the game:
+Provides up-to-date insights into economic conditions.
+Feeds data into other contracts, such as PortfolioManager.
+4. TokenStandard.sol
+Implements ERC-20/721 standards for asset management.
 
-1. StoryNFT.sol: Manages minting and ownership of story-related NFTs (characters, items).
-2. Voting.sol: Facilitates on-chain voting to determine narrative progression based on player choices.
-3. GuildSystem.sol: Implements the guild mechanics, including guild creation, membership management, and tracking guild achievements.
-4. NFTMarketplace.sol: Manages listing, buying, and selling of NFTs within the game’s ecosystem.
+Supports token minting, transfers, and approval.
+Ensures compatibility with fungible and non-fungible tokens.
+Technical Architecture
+Workflow:
+Portfolio Creation:
+Users define their portfolio, including assets and risk tolerance.
+AI Analysis:
+AI models analyze market conditions and user data to recommend asset allocations.
+Economic Data Integration:
+Oracles provide real-time data (e.g., inflation, interest rates) to the EconomicDataOracle contract.
+Rebalancing:
+PortfolioManager triggers rebalancing based on AI signals and economic data.
+Staking Rewards:
+Users can stake unused tokens in pools to earn rewards.
 
-# 5. Architecture
-- Frontend: Game interface for player interaction, story visualization, and minigames.
-- Backend: Handles game logic, communicates with Taiko smart contracts for recording actions, and manages user authentication.
-- Smart Contracts: Deployed on the Taiko blockchain, providing NFT minting, voting, guild management, and marketplace functions.
-- Database: Stores player and guild stats, inventory, and achievements, synchronized with on-chain data.
+# Smart Contract Deployment
+Requirements
+Node.js v16+
+Hardhat
+Ethereum Wallet (e.g., MetaMask)
+Taiko Testnet Configuration
+Steps
+Clone this repository:
+bash
+Copy code
+git clone https://github.com/username/aethervault.git
+cd aethervault
+Install dependencies:
+bash
+Copy code
+npm install
+Compile contracts:
+bash
+Copy code
+npx hardhat compile
+Deploy contracts to the Taiko network:
+bash
+Copy code
+npx hardhat run scripts/deploy.js --network taiko
 
-# 6. Getting Started
-**Prerequisites**
-- Node.js v14+ and npm
-- Hardhat: Ethereum development environment
-- MetaMask: Wallet for interacting with the Taiko blockchain
+- TokenStandard deployed to: 0xe34c86A03F17E29F77beeE7c898Adae4dD578006
+- MockOracle deployed to: 0xA0BF7F60ec762cc7b88dEc415D46F12cFF130a55
+- EconomicDataOracle deployed to: 0x41CD3d7753eeAD4c2d384a6C0074eA4c27dE36F1
 
-**Installation**
-- Clone the repository:
-
-git clone https://github.com/Hackathonzx/storycrafters.git
-
-cd storycrafters
-
-**Install dependencies:**
-- npm install
-
-# 7. Deployment
-Set up environment variables in a .env file:
-
-PRIVATE_KEY=<Your_Wallet_Private_Key>
-
-TAOKO_RPC_URL=<Your_Taiko_RPC_URL>
-
-**Compile contracts:**
-- npx hardhat compile
-- Deploy contracts:
-
-npx hardhat run ignition/modules/deploy.js --network TaikoHeklaL2
-
-Here is the deployed contract addresses: 
-
-# 8. Testing
-Run the following command to execute the test suite:
-
+Testing
+Run unit tests:
+bash
+Copy code
 npx hardhat test
-Tests are located in the test/ directory and verify functionality for all key contracts:
+Coverage report:
+bash
+Copy code
+npx hardhat coverage
+User Interface
+The frontend connects to the deployed smart contracts and provides:
 
-- GuildSystem: Guild creation, joining, and retrieving guild details.
-- NFTMarketplace: NFT listing, buying, and ownership transfer.
-- StoryNFT: NFT minting, token URI validation.
-- Voting: Poll creation, voting, and vote tallying.
+Portfolio Management Interface: Users can create and manage portfolios.
+Economic Dashboard: Displays real-time indicators.
+Staking Panel: Users can stake tokens and track rewards.
+Running the Frontend
+Start the development server:
+bash
+Copy code
+npm start
+Project Goals
+AetherVault aims to:
 
-# 9. Usage
-- Story Choices: Players can vote on critical story choices using the Voting contract. Each vote influences story progression, and choices are permanently recorded on-chain.
+Empower users with AI-driven tools for efficient asset management.
+Foster transparency and decentralization in DeFi.
+Showcase the capabilities of the Taiko ecosystem through seamless integration.
+Hackathon Criteria Mapping
+Criteria	Implementation
+Best Business Idea	AI-driven portfolio management introduces innovation in DeFi and addresses a broad market need for automated solutions.
+Most Community Support	Staking pools and reward mechanisms encourage user engagement.
+Most Impressive Grant Proposal	Detailed technical architecture and roadmap demonstrate clear objectives and feasibility.
+Best Pitch Presentation	AI-powered automation, real-time dashboards, and staking opportunities make the platform attractive and scalable.
+Most Innovative Idea	Combines AI, real-time data, and DeFi for a unique user experience while leveraging Taiko's advanced capabilities.
+Taiko Ecosystem Integration
+AetherVault leverages Taiko's:
 
-- NFT Collection: Use the StoryNFT contract to mint and collect NFTs that represent characters, items, and artifacts in the game.
+Scalable Network: Ensures seamless interaction between contracts and users.
+Community: Drives adoption by integrating Taiko’s decentralized infrastructure.
+Contributing
+We welcome contributions!
 
-- Guild Interaction: The GuildSystem contract allows players to join guilds, participate in missions, and achieve rewards, fostering teamwork and competition.
+Fork the repository and create a feature branch.
+Submit a pull request with your changes.
+License
+This project is licensed under the MIT License.
 
-- NFT Marketplace: List, buy, or trade NFTs through the NFTMarketplace contract. Items acquired or crafted within the game can be traded with other players.
-
-- Leaderboard and Achievements: Leaderboards and achievements track individual and guild progress, rewarding top performers with exclusive NFTs or badges.
-
-# 10. Contributing
-We welcome contributions from the community! To get involved:
-
-1. Fork the repository and create your feature branch (git checkout -b feature/YourFeature).
-2. Make changes and commit (git commit -m 'Add YourFeature').
-3. Push to the branch (git push origin feature/YourFeature).
-4. Open a pull request, and the team will review your submission.
-
-**Code Style**
-- Solidity: Use best practices for gas efficiency and readability.
-- JavaScript: Follow ES6+ standards, and ensure clarity and modularity.
-
-# 11. License
-This project is licensed under the MIT License. See LICENSE file for details.
-
-**Contact**
-
-For questions, suggestions, or collaboration inquiries, please open an issue on the GitHub repository.
-
+Contact
+For any questions or support, please reach out to:
+Email: yourname@example.com
+Discord: @yourusername
