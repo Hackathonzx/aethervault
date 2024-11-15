@@ -4,13 +4,13 @@ async function main() {
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
 
-  // // 1. Deploy TokenStandard contract (ERC-20/721 for asset management)
-  // const TokenStandard = await ethers.getContractFactory("TokenStandard");
-  // const tokenName = "AetherToken";
-  // const tokenSymbol = "AET";
-  // const tokenStandard = await TokenStandard.deploy(tokenName, tokenSymbol);
-  // await tokenStandard.waitForDeployment();
-  // console.log("TokenStandard deployed to:", await tokenStandard.getAddress());
+  // 1. Deploy TokenStandard contract (ERC-20/721 for asset management)
+  const TokenStandard = await ethers.getContractFactory("TokenStandard");
+  const tokenName = "AetherToken";
+  const tokenSymbol = "AET";
+  const tokenStandard = await TokenStandard.deploy(tokenName, tokenSymbol);
+  await tokenStandard.waitForDeployment();
+  console.log("TokenStandard deployed to:", await tokenStandard.getAddress());
 
   // Deploy MockOracle contract
   const MockOracle = await ethers.getContractFactory("MockOracle");
@@ -29,10 +29,7 @@ async function main() {
 
   // 3. Deploy PortfolioManager contract (handles portfolio creation and rebalancing)
   const PortfolioManager = await ethers.getContractFactory("PortfolioManager");
-  const portfolioManager = await PortfolioManager.deploy(
-    await tokenStandard.getAddress(), 
-    await economicDataOracle.getAddress()
-  );
+  const portfolioManager = await PortfolioManager.deploy();
   await portfolioManager.waitForDeployment();
   console.log("PortfolioManager deployed to:", await portfolioManager.getAddress());
 

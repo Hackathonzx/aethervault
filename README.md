@@ -82,18 +82,19 @@ bash
 Copy code
 npx hardhat run scripts/deploy.js --network taiko
 
+# the contract deployed addresses are:
 - TokenStandard deployed to: 0xe34c86A03F17E29F77beeE7c898Adae4dD578006
 - MockOracle deployed to: 0xA0BF7F60ec762cc7b88dEc415D46F12cFF130a55
 - EconomicDataOracle deployed to: 0x41CD3d7753eeAD4c2d384a6C0074eA4c27dE36F1
+- PortfolioManager deployed to: 0x1d8c981FD95060A45b3Cea346DbF7b5b48f5CD36
+- StakingRewards deployed to: 0xf1979Ac32D086D1f3f3773fe0828d37729ed545f
 
 Testing
 Run unit tests:
-bash
-Copy code
+
 npx hardhat test
 Coverage report:
-bash
-Copy code
+
 npx hardhat coverage
 User Interface
 The frontend connects to the deployed smart contracts and provides:
@@ -103,8 +104,7 @@ Economic Dashboard: Displays real-time indicators.
 Staking Panel: Users can stake tokens and track rewards.
 Running the Frontend
 Start the development server:
-bash
-Copy code
+
 npm start
 Project Goals
 AetherVault aims to:
