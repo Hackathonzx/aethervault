@@ -35,48 +35,46 @@ Automated portfolio rebalancing based on AI signals, ensuring optimal performanc
 - Calculates and distributes rewards proportionally.
 
 3. EconomicDataOracle.sol
-Fetches real-time economic data from external oracles.
+- Fetches real-time economic data from external oracles.
+- Provides up-to-date insights into economic conditions.
+- Feeds data into other contracts, such as PortfolioManager.
 
-Provides up-to-date insights into economic conditions.
-Feeds data into other contracts, such as PortfolioManager.
 4. TokenStandard.sol
-Implements ERC-20/721 standards for asset management.
+- Implements ERC-20/721 standards for asset management.
+- Supports token minting, transfers, and approval.
+- Ensures compatibility with fungible and non-fungible tokens.
 
-Supports token minting, transfers, and approval.
-Ensures compatibility with fungible and non-fungible tokens.
-Technical Architecture
+# Technical Architecture
 Workflow:
-Portfolio Creation:
-Users define their portfolio, including assets and risk tolerance.
-AI Analysis:
-AI models analyze market conditions and user data to recommend asset allocations.
-Economic Data Integration:
-Oracles provide real-time data (e.g., inflation, interest rates) to the EconomicDataOracle contract.
-Rebalancing:
-PortfolioManager triggers rebalancing based on AI signals and economic data.
-Staking Rewards:
-Users can stake unused tokens in pools to earn rewards.
+- Portfolio Creation: Users define their portfolio, including assets and risk tolerance.
+- AI Analysis: AI models analyze market conditions and user data to recommend asset allocations.
+- Economic Data Integration: Oracles provide real-time data (e.g., inflation, interest rates) to the EconomicDataOracle contract.
+- Rebalancing: PortfolioManager triggers rebalancing based on AI signals and economic data.
+- Staking Rewards: Users can stake unused tokens in pools to earn rewards.
 
 # Smart Contract Deployment
-Requirements
-Node.js v16+
-Hardhat
-Ethereum Wallet (e.g., MetaMask)
-Taiko Testnet Configuration
-Steps
-Clone this repository:
-bash
-Copy code
-git clone https://github.com/username/aethervault.git
+
+**Requirements**
+- Node.js v16+
+- Hardhat
+- Ethereum Wallet (e.g., MetaMask)
+- Taiko Testnet Configuration
+
+**Steps**
+- Clone this repository:
+
+git clone https://github.com/Hackathonzx/aethervault.git
+
 cd aethervault
-Install dependencies:
-bash
-Copy code
-npm install
-Compile contracts:
-bash
-Copy code
-npx hardhat compile
+
+**Install dependencies:**
+- npm install
+
+**Compile contracts:**
+- npx hardhat compile
+
+# Deployment
+
 Deploy contracts to the Taiko network:
 bash
 Copy code

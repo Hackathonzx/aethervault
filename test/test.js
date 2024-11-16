@@ -10,7 +10,9 @@ describe("AetherVault Contracts", function () {
 
         // Deploy TokenStandard contract
         const TokenStandard = await ethers.getContractFactory("TokenStandard");
-        tokenStandard = await TokenStandard.deploy();
+        const tokenName = "AetherToken";
+        const tokenSymbol = "AET";
+        const tokenStandard = await TokenStandard.deploy(tokenName, tokenSymbol);
         await tokenStandard.waitForDeployment();
 
         // Deploy EconomicDataOracle contract
