@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Heading, Fade } from '@mui/material';
+import { Box, Typography, Fade } from '@mui/material';
 import { connectWallet, getTotalSupply } from '../services/contractInteractions';
 
 interface PortfolioManagerProps {
@@ -26,18 +26,13 @@ export default function PortfolioManager({ }: PortfolioManagerProps) {
 
   return (
     <Fade in={loaded}>
-      <Box
-        bgcolor="whiteAlpha.200"
-        borderRadius="lg"
-        p={6}
-        mb={6}
-      >
-        <Heading size="xl" mb={4}>
+      <Box className="bg-gradient bg-opacity-20 rounded-lg p-6 mb-6">
+        <Typography variant="h4" className="mb-4">
           Portfolio Manager
-        </Heading>
+        </Typography>
         <p>Total Supply: {totalSupply !== null ? totalSupply.toString() : 'Loading...'}</p>
         {/* Use portfolioId in the component as needed */}
-        {/* Portfolio management UI elements with MUI */}
+        {/* Portfolio management UI elements with Material UI */}
         {/* ...existing code... */}
       </Box>
     </Fade>

@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Typography } from '@mui/material';
 // ...existing imports...
 
 export default function EconomicDashboard() {
   return (
-    <Box bg="whiteAlpha.200" borderRadius="lg" p={6} mb={6}>
-      <Heading size="xl" mb={4}>
+    <Box className="bg-gradient bg-opacity-20 rounded-lg p-6 mb-6">
+      <Typography variant="h4" className="mb-4">
         Economic Dashboard
-      </Heading>
-      {/* Dashboard UI elements and graphs with Chakra UI */}
+      </Typography>
+      {/* Dashboard UI elements and graphs with Material UI */}
       {/* ...existing code... */}
     </Box>
   );

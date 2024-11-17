@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Box } from '@chakra-ui/react';
+import { Button, Box } from '@mui/material';
 
 interface PrimaryButtonProps {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface PrimaryButtonProps {
 
 export function PrimaryButton({ children, onClick }: PrimaryButtonProps) {
   return (
-    <Button colorScheme="yellow" onClick={onClick}>
+    <Button variant="contained" color="primary" onClick={onClick}>
       {children}
     </Button>
   );
@@ -20,13 +20,7 @@ interface CardProps {
 
 export function Card({ children }: CardProps) {
   return (
-    <Box
-      bg="whiteAlpha.200"
-      borderRadius="lg"
-      p={6}
-      mb={6}
-      backdropFilter="blur(10px)"
-    >
+    <Box className="bg-gradient bg-opacity-20 rounded-lg p-6 mb-6 backdrop-blur-lg">
       {children}
     </Box>
   );

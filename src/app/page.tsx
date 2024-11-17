@@ -41,7 +41,7 @@ export default function Home() {
             <Grid item xs={12} md={6}>
               <Typography variant="body2">
                 EASY PLATFORM FOR TRADING{' '}
-                <Box component="span" bgcolor="grey.700" paddingX={2} paddingY={1} borderRadius="50%">
+                <Box component="span" className="bg-gray-700 px-2 py-1 rounded-full">
                   Assets
                 </Box>
               </Typography>
@@ -56,10 +56,7 @@ export default function Home() {
             </Grid>
             <Grid item xs={12} md={6}>
               <Box
-                bgcolor="white"
-                borderRadius="8px"
-                padding="16px"
-                marginBottom="16px"
+                className="bg-white rounded-lg p-4 mb-4"
               >
                 {/* Include cards and graphs using MUI components */}
                 {/* ...existing code... */}
