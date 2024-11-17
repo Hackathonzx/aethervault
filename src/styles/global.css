@@ -4,9 +4,9 @@
 
 /* Custom global styles */
 body {
-  @apply font-inter bg-gradient-to-br from-blue-900 via-red-700 to-yellow-500 text-white;
+  @apply font-inter bg-gradient-to-br from-purple-800 via-orange-600 to-purple-400 text-white;
 }
 
 .bg-gradient {
-  @apply bg-gradient-to-br from-blue-900 via-red-700 to-yellow-500;
+  @apply bg-gradient-to-br from-purple-800 via-orange-600 to-purple-400;
 }
