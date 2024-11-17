@@ -3,22 +3,17 @@ import {
   Heading,
   Text,
   Button,
-  HStack,
   VStack,
   Link,
   chakra,
   Stack,
+  HStack,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
 
 const MotionBox = chakra(motion.div, {
-  /**
-   * Allow motion props and children to be forwarded.
-   * @type {(prop: string) => boolean}
-   */
-  baseStyle: {},
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
-}) as typeof motion.div;
+});
 
 export default function Home() {
   return (
@@ -39,14 +34,15 @@ export default function Home() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Stack direction="row" spacing={4}>
         <HStack spacing={4}>
-          <Link href="#" color="white">
-            Docs
-          </Link>
-          <Button colorScheme="yellow">Join Waitlist</Button>
-          <Button colorScheme="yellow">Launch Demo</Button>
-        </HStack>
+          <HStack spacing={4}>
+            <Link href="#" color="white">
+              Docs
+            </Link>
+            <Button colorScheme="yellow">Join Waitlist</Button>
+            <Button colorScheme="yellow">Launch Demo</Button>
+          </HStack>
+        </Stack>
       </Box>
       <Box
         as="main"
