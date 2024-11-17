@@ -9,7 +9,7 @@ interface PortfolioManagerProps {
   portfolioId: string | string[] | undefined;
 }
 
-export default function PortfolioManager({ portfolioId }: PortfolioManagerProps) {
+export default function PortfolioManager({ }: PortfolioManagerProps) {
   const [totalSupply, setTotalSupply] = useState<number | null>(null);
 
   useEffect(() => {
