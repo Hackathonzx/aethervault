@@ -5,15 +5,11 @@ import {
   Button,
   VStack,
   Link,
-  chakra,
-  Stack,
   HStack,
 } from '@chakra-ui/react';
-import { motion, isValidMotionProp } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-const MotionBox = chakra(motion.div, {
-  shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
-});
+const MotionBox = motion(Box);
 
 export default function Home() {
   return (
@@ -34,15 +30,14 @@ export default function Home() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <HStack spacing={4}>
-          <HStack spacing={4}>
-            <Link href="#" color="white">
-              Docs
-            </Link>
-            <Button colorScheme="yellow">Join Waitlist</Button>
-            <Button colorScheme="yellow">Launch Demo</Button>
-          </HStack>
-        </Stack>
+        <Heading size="lg">AETHERVAULT</Heading>
+        <HStack className="space-x-4">
+          <Link href="#" color="white">
+            Docs
+          </Link>
+          <Button colorScheme="yellow">Join Waitlist</Button>
+          <Button colorScheme="yellow">Launch Demo</Button>
+        </HStack>
       </Box>
       <Box
         as="main"
@@ -54,7 +49,7 @@ export default function Home() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <VStack align="start" p={4} spacing={4} w={{ base: 'full', md: '50%' }}>
+        <VStack align="start" p={4} className="gap-4" w={{ base: 'full', md: '50%' }}>
           <Text fontSize="sm">
             EASY PLATFORM FOR TRADING{' '}
             <Box as="span" bg="gray.700" px={2} py={1} borderRadius="full">
@@ -65,7 +60,7 @@ export default function Home() {
           <Text fontSize="lg">
             Revolutionize how you manage your digital assets with Aethervault.
           </Text>
-          <HStack spacing={4}>
+          <HStack className="space-x-4">
             <Button colorScheme="yellow">Launch Demo</Button>
             <Button colorScheme="yellow">Join Waitlist</Button>
           </HStack>
