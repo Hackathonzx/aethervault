@@ -1,16 +1,23 @@
-import { ethers } from 'ethers';
-import { CONTRACT_ADDRESSES, ABI } from '../config';
+import { ethers, JsonRpcSigner } from 'ethers';
+import { Web3Provider } from '@ethersproject/providers';
+import { CONTRACT_ADDRESSES, ABI } from '@/config';
 
-let provider: ethers.providers.Web3Provider;
-let signer: ethers.providers.JsonRpcSigner;
+declare global {
+  interface Window {
+    ethereum: never;
+  }
+}
+
+let provider: Web3Provider;
+let signer: JsonRpcSigner;
 
 export async function connectWallet() {
   if (!window.ethereum) {
     throw new Error('No crypto wallet found. Please install it.');
   }
-  provider = new ethers.providers.Web3Provider(window.ethereum);
-  await provider.send('eth_requestAccounts', []);
-  signer = provider.getSigner();
+  provider = new Web3Provider(window.ethereum) as Web3Provider;
+  await (provider as Web3Provider).send('eth_requestAccounts', []);
+  signer = provider.getSigner() as unknown as JsonRpcSigner;
 }
 
 export function getContract(contractName: keyof typeof CONTRACT_ADDRESSES) {
