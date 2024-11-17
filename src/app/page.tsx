@@ -7,13 +7,18 @@ import {
   VStack,
   Link,
   chakra,
+  Stack,
 } from '@chakra-ui/react';
 import { motion, isValidMotionProp } from 'framer-motion';
 
 const MotionBox = chakra(motion.div, {
+  /**
+   * Allow motion props and children to be forwarded.
+   * @type {(prop: string) => boolean}
+   */
   baseStyle: {},
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
-});
+}) as typeof motion.div;
 
 export default function Home() {
   return (
@@ -34,7 +39,7 @@ export default function Home() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Heading size="lg">AETHERVAULT</Heading>
+        <Stack direction="row" spacing={4}>
         <HStack spacing={4}>
           <Link href="#" color="white">
             Docs
@@ -53,7 +58,7 @@ export default function Home() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <VStack align="start" p={4} spacingY={4} w={{ base: 'full', md: '50%' }}>
+        <VStack align="start" p={4} spacing={4} w={{ base: 'full', md: '50%' }}>
           <Text fontSize="sm">
             EASY PLATFORM FOR TRADING{' '}
             <Box as="span" bg="gray.700" px={2} py={1} borderRadius="full">
@@ -64,7 +69,7 @@ export default function Home() {
           <Text fontSize="lg">
             Revolutionize how you manage your digital assets with Aethervault.
           </Text>
-          <HStack spacing="4">
+          <HStack spacing={4}>
             <Button colorScheme="yellow">Launch Demo</Button>
             <Button colorScheme="yellow">Join Waitlist</Button>
           </HStack>
