@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, Button, Input } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react';
 // ...existing imports...
 
 export default function StakingPanel() {

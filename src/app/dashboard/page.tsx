@@ -1,4 +1,4 @@
-import EconomicDashboard from '../../components/EconomicDashboard';
+import EconomicDashboard from '@/components/EconomicDashboard';
 // ...existing imports...
 
 export default function DashboardPage() {

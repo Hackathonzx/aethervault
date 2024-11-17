@@ -6,10 +6,13 @@ import {
   VStack,
   Link,
   HStack,
+  chakra,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-const MotionBox = motion(Box);
+// const MotionBox = motion.custom(Box);
+
+const MotionBox = chakra(motion.div)
 
 export default function Home() {
   return (

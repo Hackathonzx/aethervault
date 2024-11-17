@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import PortfolioManager from '../../components/PortfolioManager';
+import PortfolioManager from '@/components/PortfolioManager';
 // ...existing imports...
 
 export default function PortfolioPage() {

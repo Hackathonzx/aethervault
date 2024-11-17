@@ -1,8 +1,12 @@
 import React from 'react';
 import { Button, Box } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 
-export function PrimaryButton({ children, onClick }) {
+interface PrimaryButtonProps {
+  children: React.ReactNode;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export function PrimaryButton({ children, onClick }: PrimaryButtonProps) {
   return (
     <Button colorScheme="yellow" onClick={onClick}>
       {children}
@@ -10,7 +14,11 @@ export function PrimaryButton({ children, onClick }) {
   );
 }
 
-export function Card({ children }) {
+interface CardProps {
+  children: React.ReactNode;
+}
+
+export function Card({ children }: CardProps) {
   return (
     <Box
       bg="whiteAlpha.200"
