@@ -1,76 +1,71 @@
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  VStack,
-  Link,
-  HStack,
-  chakra,
-} from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-
-const MotionBox = chakra(motion.div);
+import { Box, Typography, Button, Link, Container, Grid, Fade } from '@mui/material';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
   return (
-    <MotionBox
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      minH="100vh"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      p={8}
-    >
+    <Fade in={loaded}>
       <Box
-        as="header"
-        w="full"
+        minHeight="100vh"
         display="flex"
-        justifyContent="space-between"
+        flexDirection="column"
         alignItems="center"
+        justifyContent="center"
+        padding={8}
       >
-        <Heading size="lg">AETHERVAULT</Heading>
-        <HStack className="space-x-4">
-          <Link href="#" color="white">
-            Docs
-          </Link>
-          <Button colorScheme="yellow">Join Waitlist</Button>
-          <Button colorScheme="yellow">Launch Demo</Button>
-        </HStack>
-      </Box>
-      <Box
-        as="main"
-        mt={10}
-        w="full"
-        maxW="6xl"
-        display="flex"
-        flexDirection={{ base: 'column', md: 'row' }}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <VStack align="start" p={4} className="gap-4" w={{ base: 'full', md: '50%' }}>
-          <Text fontSize="sm">
-            EASY PLATFORM FOR TRADING{' '}
-            <Box as="span" bg="gray.700" px={2} py={1} borderRadius="full">
-              Assets
-            </Box>
-          </Text>
-          <Heading size="2xl">AI-Powered DeFi Asset Management</Heading>
-          <Text fontSize="lg">
-            Revolutionize how you manage your digital assets with Aethervault.
-          </Text>
-          <HStack className="space-x-4">
-            <Button colorScheme="yellow">Launch Demo</Button>
-            <Button colorScheme="yellow">Join Waitlist</Button>
-          </HStack>
-        </VStack>
-        <Box p={4} w={{ base: 'full', md: '50%' }}>
-          {/* Include cards and graphs using Chakra UI components and Framer Motion */}
-          {/* ...existing code... */}
+        <Box
+          component="header"
+          width="100%"
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Typography variant="h4">AETHERVAULT</Typography>
+          <Box display="flex" gap={2}>
+            <Link href="#" color="inherit">
+              Docs
+            </Link>
+            <Button variant="contained" color="primary">Join Waitlist</Button>
+            <Button variant="contained" color="primary">Launch Demo</Button>
+          </Box>
         </Box>
+        <Container component="main" marginTop={10} maxWidth="lg">
+          <Grid container spacing={4} alignItems="center">
+            <Grid item xs={12} md={6}>
+              <Typography variant="body2">
+                EASY PLATFORM FOR TRADING{' '}
+                <Box component="span" bgcolor="grey.700" paddingX={2} paddingY={1} borderRadius="50%">
+                  Assets
+                </Box>
+              </Typography>
+              <Typography variant="h2">AI-Powered DeFi Asset Management</Typography>
+              <Typography variant="h6">
+                Revolutionize how you manage your digital assets with Aethervault.
+              </Typography>
+              <Box display="flex" gap={2}>
+                <Button variant="contained" color="primary">Launch Demo</Button>
+                <Button variant="contained" color="primary">Join Waitlist</Button>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                bgcolor="white"
+                borderRadius="8px"
+                padding="16px"
+                marginBottom="16px"
+              >
+                {/* Include cards and graphs using MUI components */}
+                {/* ...existing code... */}
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
       </Box>
-    </MotionBox>
+    </Fade>
   );
 }
