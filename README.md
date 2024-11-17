@@ -92,10 +92,24 @@ npx hardhat run ignition/modules/deploy.js --network TaikoHeklaL2
 the contract deployed addresses are:
 
 - TokenStandard deployed to: 0xe34c86A03F17E29F77beeE7c898Adae4dD578006
+
+   - Link to the blockexplorer: https://hekla.taikoscan.io/address/0xe34c86a03f17e29f77beee7c898adae4dd578006
+
 - MockOracle deployed to: 0xA0BF7F60ec762cc7b88dEc415D46F12cFF130a55
+
+   - Link to the blockexplorer: https://hekla.taikoscan.io/address/0xa0bf7f60ec762cc7b88dec415d46f12cff130a55
+
 - EconomicDataOracle deployed to: 0x41CD3d7753eeAD4c2d384a6C0074eA4c27dE36F1
+
+   - Link to the blockexplorer: https://hekla.taikoscan.io/address/0x41cd3d7753eead4c2d384a6c0074ea4c27de36f1
+
 - PortfolioManager deployed to: 0x1d8c981FD95060A45b3Cea346DbF7b5b48f5CD36
+
+   - Link to the blockexplorer: https://hekla.taikoscan.io/address/0x1d8c981fd95060a45b3cea346dbf7b5b48f5cd36
+
 - StakingRewards deployed to: 0xf1979Ac32D086D1f3f3773fe0828d37729ed545f
+
+   - Link to the blockexplorer: https://hekla.taikoscan.io/address/0xf1979ac32d086d1f3f3773fe0828d37729ed545f
 
 # Testing
 
