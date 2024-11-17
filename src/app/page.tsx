@@ -34,7 +34,7 @@ export default function Home() {
             <Button variant="contained" color="primary">Launch Demo</Button>
           </Box>
         </Box>
-        <Container component="main" marginTop={10} maxWidth="lg">
+        <Container component="main" sx={{ marginTop: 10 }} maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
               <Typography variant="body2">
